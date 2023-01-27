@@ -1,0 +1,36 @@
+version: "3.7"
+services:
+    php_public:
+        container_name: php_public
+        build:
+            dockerfile: php_public.Dockerfile
+            context: .
+        restart: always
+        volumes:
+            - "/home/liber4lis/Documents/website/public:/var/www/html"
+        links:
+            - mysql_my_web
+        ports:
+            - "80:80"
+    php_intra:
+        container_name: php_intra
+        build:
+            dockerfile: php_intra.Dockerfile
+            context: .
+        restart: always
+        volumes:
+            - "/home/liber4lis/Documents/website/intra:/var/www/html"
+        links:
+            - mysql_my_web
+        ports:
+            - "82:80"
+    mysql_my_web:
+        container_name: mysql
+        image: mysql:latest
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+        volumes:
+            - /home/liber4lis/Document/db:/var/lib/mysql
+        ports:
+            - "3306:3306"
