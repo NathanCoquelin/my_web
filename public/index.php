@@ -1503,7 +1503,7 @@ auto}</style>
 		        Veuillez vous connecter	</p>
 		<fieldset>
 		<legend>Connect</legend>
-		<h1>Welcome to the Epitech's ADM intranet</h1>
+		<h1>Welcome to the Epitech students' intranet</h1>
 	</fieldset>
 		<a id="switch" href="javascript:">Connexion référent</a>
 		</div>

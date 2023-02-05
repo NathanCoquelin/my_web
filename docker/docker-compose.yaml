@@ -7,11 +7,11 @@ services:
             context: .
         restart: always
         volumes:
-            - "/home/liber4lis/Documents/website/public:/var/www/html"
+            - "/home/liber4lis/Documents/my_web/public:/var/www/html"
         links:
             - mysql_my_web
         ports:
-            - "80:80"
+            - "81:80"
     php_intra:
         container_name: php_intra
         build:
@@ -19,7 +19,7 @@ services:
             context: .
         restart: always
         volumes:
-            - "/home/liber4lis/Documents/website/intra:/var/www/html"
+            - "/home/liber4lis/Documents/my_web/intra:/var/www/html"
         links:
             - mysql_my_web
         ports:
@@ -31,6 +31,6 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: password
         volumes:
-            - /home/liber4lis/Document/db:/var/lib/mysql
+            - /home/liber4lis/Documents/db:/var/lib/mysql
         ports:
             - "3306:3306"
